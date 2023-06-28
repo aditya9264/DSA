@@ -11,6 +11,9 @@ public class LL {
          System.out.println(list);
          System.out.println(list.get(0));
          System.out.println(list.size());
+         for(int i=0;i<list.size();i++){
+            System.out.print(list.get(i) + " -> ");
+         }
          list.remove(3);
          list.removeFirst();
          list.removeLast();
