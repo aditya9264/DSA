@@ -99,9 +99,6 @@ public class LL1 {
         public int getsize(){
             return size ;
         }
-
-
-
         public static void main(String[] args) {
             LL1 list  =  new LL1();
             list.addFirst("a ");

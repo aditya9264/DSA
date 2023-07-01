@@ -9,9 +9,7 @@ public class palindrome {
        int digit = num%10;
        num= num/10;
        rev  = (rev*10)+digit;
-       
-       
-     }
+       }
 System.out.println(rev);
      if(temp == rev){
         System.out.println("Palindrome");
