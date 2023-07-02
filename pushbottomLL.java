@@ -15,6 +15,11 @@ public class pushbottomLL {
         s.push(1);
         s.push(2);
         s.push(3);
+        while(!s.isEmpty()){
+        System.out.println(s.peek());
+        s.pop();
+       
+         }
 
 
         pushatbottom(4 , s);
