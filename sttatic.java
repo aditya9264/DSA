@@ -1,6 +1,7 @@
 class Sstudent {
     String name;
-    static String school;
+    static String school;  //We define student static here now the name of the school for every
+                           //object the school name will be same for the student class.
 
     public static void changeSchool() {
         school = "newschool";
