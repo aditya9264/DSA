@@ -1,7 +1,7 @@
 class Stdent{
     String name ;
     int age ;
-
+   //copy constructor
     Stdent(Stdent s2){
         this.name = s2.name ;
         this.age = s2.age;
