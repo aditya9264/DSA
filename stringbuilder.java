@@ -12,6 +12,11 @@ public class stringbuilder {
 
         sb.setCharAt(0, 'U');
         System.out.println(sb);
+//    int rev;
+//   for (int i = sb.length()-1;i>=0;i--){
+//   rev = rev+sb.charAt(i);
+//   }
+//   System.out.println(rev);
 
         // insert char at any index
         sb.insert(1, 'a');

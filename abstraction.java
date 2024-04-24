@@ -3,9 +3,11 @@ abstract class Animal{
    public void eat(){
     System.out.println("animal eats");
    }
+
    Animal(){
 System.out.println("Creating a new Constructor");//we can create a constructor of an abstract class also
    }
+   
 }
 class Horse extends Animal{
       public void walk(){
