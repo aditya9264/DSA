@@ -41,8 +41,8 @@ class Client extends User {
         super(username, password);
     }
 
-    public void addTask(String description, String assignee) {
-        System.out.println("Task added: " + description);
+    public void addTask(Task task) {
+        System.out.println("Task added: " + task.getDescription() + " assigned to " + task.getAssignee());
     }
 }
 
@@ -171,13 +171,36 @@ public class UserAuthentication {
         }
     }
 
-    private static void addTask(String description, String assignee) {
-      if (numTasks >= MAX_TASKS) {
-        System.out.println("Maximum number of tasks reached.");
-        return;
-    }
-        Task task = new Task(description, assignee);
-        tasks[numTasks++] = task;
-        System.out.println("Task added: " + description);
+    private static void addTask(Client client, Scanner sc) {
+        if (numTasks >= MAX_TASKS) {
+            System.out.println("Maximum number of tasks reached.");
+            return;
+        }
+
+        // Ask for task description
+        System.out.print("Enter task description: ");
+        String description = sc.next();
+
+        // Ask for assignee username
+        System.out.print("Enter assignee username: ");
+        String assignee = sc.next();
+
+        // Check if the assignee exists
+        boolean assigneeExists = false;
+        for (int i = 0; i < numUsers; i++) {
+            if (users[i].getUsername().equals(assignee)) {
+                assigneeExists = true;
+                break;
+            }
+        }
+
+        // If assignee exists, add the task
+        if (assigneeExists) {
+            Task task = new Task(description, assignee);
+            tasks[numTasks++] = task;
+            client.addTask(task);
+        } else {
+            System.out.println("Assignee username not found. Task not added.");
+        }
     }
 }
